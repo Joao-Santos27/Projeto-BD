@@ -24,7 +24,7 @@ PRAGMA foreign_keys = ON;
 INSERT INTO Organizer (OrganizerID, Name, PhoneNumber, Email) VALUES
     (1, 'Rock World Lisboa', NULL, NULL);
 
--- 02. Client (fictional test identities)
+-- 02. Client
 INSERT INTO Client (CCNumber, Name, IBAN, NIF, BirthDate, Address, PhoneNumber, Email) VALUES
     ('TEST-CC-001', 'Ana Ribeiro', NULL, 'TEST-NIF-001', '1999-03-12', 'Lisboa', NULL, 'cliente1@example.com'),
     ('TEST-CC-002', 'Miguel Ferreira', NULL, 'TEST-NIF-002', '2001-06-23', 'Porto', NULL, 'cliente2@example.com'),
@@ -41,14 +41,14 @@ INSERT INTO Sponsor (Name, PhoneNumber, Email) VALUES
     ('BPI', NULL, NULL),
     ('Coca-Cola', NULL, NULL);
 
--- 04. Stages (illustrative capacities)
+-- 04. Stages
 INSERT INTO Stage (StageID, Name, Capacity) VALUES
     (1, 'Palco Mundo', 80000),
     (2, 'Palco Music Valley', 15000),
     (3, 'Palco Super Bock', 12000),
     (4, 'BacanaPlay Digital Stage', 6000);
 
--- 05. Staff members (fictional)
+-- 05. Staff members
 INSERT INTO StaffMember (StaffID, Name, PhoneNumber, Email) VALUES
     (1, 'Marta Silva', NULL, 'staff1@example.com'),
     (2, 'Tiago Costa', NULL, 'staff2@example.com'),
@@ -57,7 +57,7 @@ INSERT INTO StaffMember (StaffID, Name, PhoneNumber, Email) VALUES
     (5, 'Leonor Pinto', NULL, 'staff5@example.com'),
     (6, 'Bruno Almeida', NULL, 'staff6@example.com');
 
--- 06. Operational tasks (illustrative)
+-- 06. Tasks 
 INSERT INTO Task (Name) VALUES
     ('Access control'),
     ('Sound check'),
@@ -65,7 +65,7 @@ INSERT INTO Task (Name) VALUES
     ('Crowd management'),
     ('Equipment inspection');
 
--- 07. Artists performing on June 20 and 21
+-- 07. Artists 
 INSERT INTO Artist (ArtistID, DebutDate, Name) VALUES
     (1, NULL, 'Calema'),
     (2, NULL, 'Pedro Sampaio'),
@@ -80,7 +80,7 @@ INSERT INTO Artist (ArtistID, DebutDate, Name) VALUES
     (11, NULL, 'Sepultura'),
     (12, NULL, 'Kaiser Chiefs');
 
--- 08. Musical genres
+-- 08. Genres
 INSERT INTO Genre (GenreID, Name) VALUES
     (1, 'Pop'),
     (2, 'Rock'),
@@ -89,28 +89,28 @@ INSERT INTO Genre (GenreID, Name) VALUES
     (5, 'Electronic'),
     (7, 'Latin');
 
--- 09. Band members for selected artists
+-- 09. Band members
 INSERT INTO Member (MemberID, ArtisticName, RealName, BirthDate, Instrument) VALUES
     (1, 'Mike Shinoda', 'Michael Kenji Shinoda', NULL, 'Vocals, guitar, keyboards'),
     (2, 'Joe Hahn', 'Joseph Hahn', NULL, 'Turntables'),
     (3, 'Dave Farrell', 'David Michael Farrell', NULL, 'Bass');
 
--- 10. Festival - only the 20-21 June subset
+-- 10. Festival 
 INSERT INTO Festival (FestivalID, OrganizerID, Name, Location, StartDate, EndDate, Capacity) VALUES
     (1, 1, 'Rock in Rio Lisboa 2026', 'Parque Tejo, Lisboa', '2026-06-20', '2026-06-21', 100000);
 
--- 11. Festival days: June 20 and 21
+-- 11. Festival days
 INSERT INTO FestivalDay (DayID, FestivalID, Date) VALUES
     (1, 1, '2026-06-20'),
     (2, 1, '2026-06-21');
 
--- 12. Ticket types for June 20 and 21
+-- 12. Ticket types
 INSERT INTO TicketType (TicketTypeID, FestivalID, Name, Price) VALUES
     (1, 1, 'Relvado 20 June', 89.0),
     (2, 1, 'Relvado 21 June', 89.0),
     (3, 1, 'Weekend Pass 20-21 June', 157.0);
 
--- 13. Staff assignments (illustrative)
+-- 13. Staff assignments 
 INSERT INTO StaffAssignment (AssignmentID, FestivalID, StageID, Role, Area) VALUES
     (1, 1, 1, 'Sound technician', 'Audio'),
     (2, 1, 1, 'Security supervisor', 'Front of stage'),
@@ -119,14 +119,14 @@ INSERT INTO StaffAssignment (AssignmentID, FestivalID, StageID, Role, Area) VALU
     (5, 1, NULL, 'Access coordinator', 'Main entrance'),
     (6, 1, 4, 'Stage technician', 'Digital Stage');
 
--- 14. Ticket purchases (fictional)
+-- 14. Ticket purchases 
 INSERT INTO TicketPurchase (PurchaseID, CCNumber, Date, Value, PaymentMethod) VALUES
     (1, 'TEST-CC-001', '2026-05-20', 178.0, 'Card'),
     (2, 'TEST-CC-002', '2026-06-02', 157.0, 'MB WAY'),
     (3, 'TEST-CC-003', '2026-05-18', 89.0, 'Card'),
     (7, 'TEST-CC-007', '2026-05-14', 89.0, 'Card');
 
--- 15. Concerts on June 20 and 21 (end times illustrative)
+-- 15. Concerts 
 INSERT INTO Concert (ConcertID, DayID, StageID, StartTime, EndTime) VALUES
     (1, 1, 1, '17:00:00', '18:00:00'),
     (2, 1, 1, '19:00:00', '20:00:00'),
@@ -141,7 +141,7 @@ INSERT INTO Concert (ConcertID, DayID, StageID, StartTime, EndTime) VALUES
     (11, 2, 2, '22:15:00', '23:15:00'),
     (12, 2, 3, '20:15:00', '21:15:00');
 
--- 16. Sponsorships (illustrative values)
+-- 16. Sponsorships
 INSERT INTO Sponsorship (FestivalID, SponsorName, ContributionType, ContributionValue, ContributionDescription) VALUES
     (1, 'bp', 'Financial', 75000.0, 'Illustrative event support'),
     (1, 'BPI', 'Financial', 100000.0, 'Illustrative banking partnership'),
@@ -213,7 +213,7 @@ INSERT INTO ConsistsOf (ArtistID, MemberID) VALUES
     (10, 2),
     (10, 3);
 
--- 23. Tickets for June 20 and 21
+-- 23. Tickets
 INSERT INTO Ticket (TicketID, PurchaseID, TicketTypeID) VALUES
     (1, 1, 1),
     (2, 1, 1),
