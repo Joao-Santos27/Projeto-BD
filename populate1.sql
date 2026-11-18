@@ -81,13 +81,13 @@ INSERT INTO Artist (ArtistID, DebutDate, Name) VALUES
     (12, NULL, 'Kaiser Chiefs');
 
 -- 08. Genres
-INSERT INTO Genre (GenreID, Name) VALUES
-    (1, 'Pop'),
-    (2, 'Rock'),
-    (3, 'Hip-Hop'),
-    (4, 'Metal'),
-    (5, 'Electronic'),
-    (7, 'Latin');
+INSERT INTO Genre (Name) VALUES
+    ('Pop'),
+    ('Rock'),
+    ('Hip-Hop'),
+    ('Metal'),
+    ('Electronic'),
+    ('Latin');
 
 -- 09. Band members
 INSERT INTO Member (MemberID, ArtisticName, RealName, BirthDate, Instrument) VALUES
@@ -190,22 +190,22 @@ INSERT INTO Performs (ConcertID, ArtistID) VALUES
     (12, 12);
 
 -- 21. Artist genres
-INSERT INTO ClassifiedAs (ArtistID, GenreID) VALUES
-    (1, 1),
-    (2, 5),
-    (2, 7),
-    (3, 1),
-    (4, 1),
-    (5, 1),
-    (6, 1),
-    (7, 2),
-    (7, 3),
-    (8, 2),
-    (9, 3),
-    (10, 2),
-    (10, 4),
-    (11, 4),
-    (12, 2);
+INSERT INTO ClassifiedAs (ArtistID, GenreName) VALUES
+    (1, 'Pop'),
+    (2, 'Electronic'),
+    (2, 'Latin'),
+    (3, 'Pop'),
+    (4, 'Pop'),
+    (5, 'Pop'),
+    (6, 'Pop'),
+    (7, 'Rock'),
+    (7, 'Hip-Hop'),
+    (8, 'Rock'),
+    (9, 'Hip-Hop'),
+    (10, 'Rock'),
+    (10, 'Metal'),
+    (11, 'Metal'),
+    (12, 'Rock');
 
 -- 22. Band membership
 INSERT INTO ConsistsOf (ArtistID, MemberID) VALUES

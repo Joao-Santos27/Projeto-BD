@@ -193,19 +193,18 @@ CREATE TABLE Performs(
 );
 
 CREATE TABLE Genre(
-    GenreID INTEGER PRIMARY KEY,
-    Name TEXT NOT NULL UNIQUE
+    Name TEXT PRIMARY KEY
 );
 
 CREATE TABLE ClassifiedAs(
     ArtistID INTEGER NOT NULL,
-    GenreID INTEGER NOT NULL,
+    GenreName TEXT NOT NULL,
 
-    PRIMARY KEY (ArtistID, GenreID),
+    PRIMARY KEY (ArtistID, GenreName),
     FOREIGN KEY (ArtistID)
         REFERENCES Artist(ArtistID),
-    FOREIGN KEY (GenreID)
-        REFERENCES Genre(GenreID)
+    FOREIGN KEY (GenreName)
+        REFERENCES Genre(Name)
 );
 
 CREATE TABLE Member(
